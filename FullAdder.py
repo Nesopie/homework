@@ -26,6 +26,10 @@ class FullAdderCircuit :
         if(len(self.result) > 4) : 
             tempResult = self.result[0:4]
             self.result = tempResult[::-1]
+        elif(len(self.result) < 4) :
+            while(len(self.result) < 4) :
+                self.result = [*self.result,0]
+            self.result = self.result[::-1]
 
     def convertToBinary(self, numberInString) : 
         binary = []
