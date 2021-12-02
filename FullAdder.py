@@ -24,12 +24,11 @@ class FullAdderCircuit :
             secondNumberIterator += 1
         
         if(len(self.result) > 4) : 
-            tempResult = self.result[0:4]
-            self.result = tempResult[::-1]
-        else :
-            while(len(self.result) < 4) :
-                self.result = [*self.result,0]
-            self.result = self.result[::-1]
+            self.result = self.result[0:4]
+        while(len(self.result) < 4) :
+            self.result = [*self.result,0]
+
+        self.result = self.result[::-1]
 
     def convertToBinary(self, numberInString) : 
         binary = []
@@ -53,8 +52,8 @@ class FullAdder:
         return sum, carry
 
     
-firstNumber = input("Enter the first number: ")
-secondNumber = input("Enter the second number: ")
+firstNumber = input("Enter the first number in binary: ")
+secondNumber = input("Enter the second number in binary: ")
 
 FullAdderObject = FullAdderCircuit(firstNumber, secondNumber)
 FullAdderObject.add()
